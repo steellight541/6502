@@ -35,6 +35,22 @@ STA white ; sla de waarde 1 op in het geheugenadres $1
 LDA #5
 STA myVar ; sla de waarde 5 op in het geheugenadres $10
 ```
+## labels
+je kunt ook labels gebruiken om je code meer leesbaar te maken.
+labels zijn gewoon namen die je kunt gebruiken om naar een bepaald punt in je code te verwijzen.
+je kunt een label maken door een naam te schrijven gevolgd door een dubbele punt zoals `start:`
+je kunt dan naar dit label verwijzen met de `JMP` of `JSR` instructies zoals `JMP start` of `JSR start`. bij het gebruik van JSR moet je altijd RTS gebruiken om terug te keren naar de plek waar je vandaan kwam. bij het gebruik van JMP ga je gewoon verder met de code vanaf het label en kan je NIET terug keren.
+hier is een voorbeeld:
+```x86asm
+loop:
+    LDX #$00
+    STY $10
+    INX
+    CPX #$10
+    BNE loop
+    RTS
+```
+dit is een simpel programma dat de waarde 0 tot 15 opslaat in het geheugenadres $10 tot $1F.
 
 
 # important builtin adresses
