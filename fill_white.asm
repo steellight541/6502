@@ -1,6 +1,7 @@
 fill:
     JSR init_fill
     JSR loop_fill
+    RTS
 
 
 init_fill:
