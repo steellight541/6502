@@ -30,6 +30,7 @@ display fillen met een gewenste kleur
 fill:
     JSR init_fill
     JSR loop_fill
+    RTS
 
 
 init_fill:
